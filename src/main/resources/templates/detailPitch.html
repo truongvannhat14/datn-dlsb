@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h2>Chạy thử</h2>
+</header>
+<main>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Slot</th>
+            <th scope="col">Thời gian</th>
+            <th scope="col">Trạng thái</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="slotDay : ${subpitch}">
+            <tr>
+                <td>
+                    <p th:text="${slotDay.name_slot_subPitch}"></p>
+                </td>
+                <td>
+                    <p th:text="${slotDay.time_start_end}"></p>
+                </td>
+                <td>
+                    <p th:text="${slotDay.status_slot_subPitch}"></p>
+                </td>
+                <td><a th:href="@{/booking/} + ${slotDay.id_slot_subPitch}">Đặt sân</a> </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

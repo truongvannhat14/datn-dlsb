@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+
+        body {
+            font-family: 'Pacifico';
+        }
+
+        .background {
+            position: relative;
+        }
+
+        .login {
+            width: 60%;
+            height: 60%;
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            border: solid #cccccc;
+
+        }
+
+        form {
+            text-align: center;
+            padding: 5% 10% 0 10%;
+        }
+
+        form label {
+
+            color: #ffffff;
+            font-size: 30px;
+            margin: 1% 0 0 0;
+        }
+
+        form input {
+            margin: 2% 0 5% 0;
+        }
+
+        .btn {
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 36px;
+            margin: 2% 0 0 0;
+            max-width: 160px;
+            text-transform: uppercase;
+            border: solid #fff;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #e9e9e9;
+            border: solid #e9e9e9;
+        }
+    </style>
+</head>
+<body>
+<img src="https://images.pexels.com/photos/125532/pexels-photo-125532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+     alt="" class="img-fluid background">
+<div class="container">
+    <div class="login">
+        <form th:action="@{/login}" th:object="${user}" method="post">
+            <label>User</label>
+            <input type="text" th:field="*{email_user}" class="form-control">
+            <label>Password</label>
+            <input type="password" th:field="*{pass_user}" class="form-control">
+            <button type="submit" class="btn color-green">Submit</button>
+        </form>
+        <th:block th:if="${message}">
+            <p th:text="${message}" style="color: red; font-size: medium"/>
+        </th:block>
+    </div>
+</div>
+</div>
+</body>
+</html>
