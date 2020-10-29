@@ -79,7 +79,7 @@ public class UserController {
         //Kiểm tra
         if (slotSubPitchList.size() > 0) {
             for (SlotSubPitch slot : slotSubPitchList) {
-                //kiểm tra nếu chưa có ngày đó trong dữ liệu
+                //kiểm tra để tránh clone dữ liệu
                 if (!slot.getSlot_day().equalsIgnoreCase(daySlot)) {
                     slotSubPitchList.remove(slot);
                 }
@@ -95,6 +95,31 @@ public class UserController {
                             slotSubPitchRepository.save(slotSubPitchList.get(i));
                         } else if (slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot) && slotSubPitchList.get(i).getStatus_slot_subPitch().equalsIgnoreCase("Còn sân")) {
                             slotDay.add(slotSubPitchList.get(i));
+                        }
+                    }
+                }
+            }else{
+                int gioCasang = 6;
+                for (int j = 0; j < 4; j++) {
+                    SlotSubPitch slotSang = new SlotSubPitch(null, subPitch, daySlot + "", "Ca " + (1 + j), "0" + (gioCasang + j) + ":00 - " + (gioCasang + j + 1) + ":00", "Còn sân");
+                    slotSubPitchRepository.save(slotSang);
+                }
+                int gioCaChieu = 13;
+                for (int y = 0; y < 8; y++) {
+                    SlotSubPitch slotChieu = new SlotSubPitch(null, subPitch, daySlot + "", "Ca " + (5 + y), (gioCaChieu + y) + ":00 - " + (gioCaChieu + y + 1) + ":00", "Còn sân");
+                    slotSubPitchRepository.save(slotChieu);
+                }
+                List<SlotSubPitch> slotNew = slotSubPitchRepository.findAll();
+                for (int i = 0; i < slotNew.size(); i++) {
+                    if (slotNew.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
+                        String timeSlot = slotNew.get(i).getTime_start_end();
+                        String checkSlot = timeSlot.substring(0, 2);
+                        //kiểm tra để vô hiệu hóa các ca quá giờ
+                        if (Integer.parseInt(checkSlot) <= Integer.parseInt(checkCa) && slotNew.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
+                            slotNew.get(i).setStatus_slot_subPitch("Hết hạn");
+                            slotSubPitchRepository.save(slotNew.get(i));
+                        } else if (slotNew.get(i).getSlot_day().equalsIgnoreCase(daySlot) && slotNew.get(i).getStatus_slot_subPitch().equalsIgnoreCase("Còn sân")) {
+                            slotDay.add(slotNew.get(i));
                         }
                     }
                 }
