@@ -170,6 +170,7 @@ public class UserController {
         modelAndView.addObject("booking", bookingForUser);
         return modelAndView;
     }
+    //Acction cho đặt lịch của người dùng
     @PostMapping("booking")
     public ModelAndView doBooking(@ModelAttribute("booking")Booking booking){
         booking = bookingForUser;

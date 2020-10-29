@@ -8,17 +8,17 @@ import com.example.demo.Model.Pitch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @Controller
 public class ManagerController {
     Long managerID;
+    Booking bookingToConfirm = new Booking();
     @Autowired
     IAdminRepository adminRepository;
     @Autowired
@@ -60,5 +60,33 @@ public class ManagerController {
         model.addAttribute("booking", bookingForManager);
         modelAndView.addObject("message", "Sai email hoặc mât khẩu!");
         return modelAndView;
+    }
+    //Chuyển form để bắt đầu confirm lịch đặt
+    @GetMapping("confirm/{id_booking}")
+    public ModelAndView confirmBooking(@PathVariable Long id_booking ){
+        Optional<Booking> confirm = bookingRepository.findById(id_booking);
+        bookingToConfirm.setId_booking(confirm.get().getId_booking());
+        bookingToConfirm.setUser(confirm.get().getUser());
+        bookingToConfirm.setManager(confirm.get().getManager());
+        bookingToConfirm.setSlotSubPitch(confirm.get().getSlotSubPitch());
+        bookingToConfirm.setBookday(confirm.get().getBookday());
+        bookingToConfirm.setMessage(confirm.get().getMessage());
+        bookingToConfirm.setVerifield_id(confirm.get().getVerifield_id());
+        bookingToConfirm.setTotal_price(confirm.get().getTotal_price());
+        bookingToConfirm.setStatus_booking(confirm.get().getStatus_booking());
+        ModelAndView modelAndView = new ModelAndView("manager/detailbooking");
+        modelAndView.addObject("booking", confirm);
+        return modelAndView;
+    }
+    //Action Confirm
+    @PostMapping("confirmbooking")
+    public ModelAndView doConfirm(@ModelAttribute("booking") Booking booking){
+        booking = bookingToConfirm;
+        Optional<Manager> manager = managerRepository.findById(managerID);
+        booking.setManager(manager.get());
+        booking.setStatus_booking("Đã xác nhận");
+        bookingRepository.save(booking);
+        ModelAndView modelAndView = new ModelAndView("manager/detailbooking");
+        return  modelAndView;
     }
 }
