@@ -81,32 +81,22 @@ public class UserController {
             for (SlotSubPitch slot : slotSubPitchList) {
                 //kiểm tra nếu chưa có ngày đó trong dữ liệu
                 if (!slot.getSlot_day().equalsIgnoreCase(daySlot)) {
-                    int gioCasang = 6;
-                    for (int j = 0; j < 4; j++) {
-                        SlotSubPitch slotSang = new SlotSubPitch(null, subPitch, daySlot + "", "Ca " + (1 + j), "0" + (gioCasang + j) + ":00 - " + (gioCasang + j + 1) + ":00", "Còn sân");
-                        slotSubPitchRepository.save(slotSang);
-                    }
-                    int gioCaChieu = 13;
-                    for (int y = 0; y < 8; y++) {
-                        SlotSubPitch slotChieu = new SlotSubPitch(null, subPitch, daySlot + "", "Ca " + (5 + y), (gioCaChieu + y) + ":00 - " + (gioCaChieu + y + 1) + ":00", "Còn sân");
-                        slotSubPitchRepository.save(slotChieu);
-                    }
-                    break;
-                } else {
-                    for (int i = 0; i < slotSubPitchList.size(); i++) {
-                        if (slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
-                            String timeSlot = slotSubPitchList.get(i).getTime_start_end();
-                            String checkSlot = timeSlot.substring(0, 2);
-                            //kiểm tra để vô hiệu hóa các ca quá giờ
-                            if (Integer.parseInt(checkSlot) <= Integer.parseInt(checkCa) && slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
-                                slotSubPitchList.get(i).setStatus_slot_subPitch("Hết hạn");
-                                slotSubPitchRepository.save(slotSubPitchList.get(i));
-                            } else if (slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot) && slotSubPitchList.get(i).getStatus_slot_subPitch().equalsIgnoreCase("Còn sân")) {
-                                slotDay.add(slotSubPitchList.get(i));
-                            }
+                    slotSubPitchList.remove(slot);
+                }
+            }
+            if(slotSubPitchList.size() > 0 ){
+                for (int i = 0; i < slotSubPitchList.size(); i++) {
+                    if (slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
+                        String timeSlot = slotSubPitchList.get(i).getTime_start_end();
+                        String checkSlot = timeSlot.substring(0, 2);
+                        //kiểm tra để vô hiệu hóa các ca quá giờ
+                        if (Integer.parseInt(checkSlot) <= Integer.parseInt(checkCa) && slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
+                            slotSubPitchList.get(i).setStatus_slot_subPitch("Hết hạn");
+                            slotSubPitchRepository.save(slotSubPitchList.get(i));
+                        } else if (slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot) && slotSubPitchList.get(i).getStatus_slot_subPitch().equalsIgnoreCase("Còn sân")) {
+                            slotDay.add(slotSubPitchList.get(i));
                         }
                     }
-                    break;
                 }
             }
         } else {
