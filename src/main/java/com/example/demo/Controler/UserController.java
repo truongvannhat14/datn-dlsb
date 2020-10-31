@@ -74,31 +74,32 @@ public class UserController {
                 detail.get().getPrice_per_hour(),
                 detail.get().getPhoto_subpitch(),
                 detail.get().getStatus_pitch());
-        List<SlotSubPitch> slotSubPitchList = slotSubPitchRepository.findAll();
+        List<SlotSubPitch> slotSubPitchList = slotSubPitchRepository.findAll();//chuyển hết vào list là 12 phần tử
+        List<SlotSubPitch> slotToDay = slotSubPitchRepository.findAll();//chuyển hết vào list là 12 phần tử
         List<SlotSubPitch> slotDay = new ArrayList<>();
         //Kiểm tra
         if (slotSubPitchList.size() > 0) {
-            for (SlotSubPitch slot : slotSubPitchList) {
+            for (int i = 0; i < slotSubPitchList.size(); i++) {
                 //kiểm tra để tránh clone dữ liệu
-                if (!slot.getSlot_day().equalsIgnoreCase(daySlot)) {
-                    slotSubPitchList.remove(slot);
+                if (!slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
+                    slotToDay.remove(slotSubPitchList.get(i));
                 }
             }
-            if(slotSubPitchList.size() > 0 ){
-                for (int i = 0; i < slotSubPitchList.size(); i++) {
-                    if (slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
+            if (slotToDay.size() > 0) {
+                for (int i = 0; i < slotToDay.size(); i++) {
+                    if (slotToDay.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
                         String timeSlot = slotSubPitchList.get(i).getTime_start_end();
                         String checkSlot = timeSlot.substring(0, 2);
                         //kiểm tra để vô hiệu hóa các ca quá giờ
-                        if (Integer.parseInt(checkSlot) <= Integer.parseInt(checkCa) && slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
-                            slotSubPitchList.get(i).setStatus_slot_subPitch("Hết hạn");
+                        if (Integer.parseInt(checkSlot) <= Integer.parseInt(checkCa) && slotToDay.get(i).getSlot_day().equalsIgnoreCase(daySlot)) {
+                            slotToDay.get(i).setStatus_slot_subPitch("Hết hạn");
                             slotSubPitchRepository.save(slotSubPitchList.get(i));
-                        } else if (slotSubPitchList.get(i).getSlot_day().equalsIgnoreCase(daySlot) && slotSubPitchList.get(i).getStatus_slot_subPitch().equalsIgnoreCase("Còn sân")) {
-                            slotDay.add(slotSubPitchList.get(i));
+                        } else if (slotToDay.get(i).getSlot_day().equalsIgnoreCase(daySlot) && slotToDay.get(i).getStatus_slot_subPitch().equalsIgnoreCase("Còn sân")) {
+                            slotDay.add(slotToDay.get(i));
                         }
                     }
                 }
-            }else{
+            } else {
                 int gioCasang = 6;
                 for (int j = 0; j < 4; j++) {
                     SlotSubPitch slotSang = new SlotSubPitch(null, subPitch, daySlot + "", "Ca " + (1 + j), "0" + (gioCasang + j) + ":00 - " + (gioCasang + j + 1) + ":00", "Còn sân");
@@ -195,14 +196,15 @@ public class UserController {
         modelAndView.addObject("booking", bookingForUser);
         return modelAndView;
     }
+
     //Acction cho đặt lịch của người dùng
     @PostMapping("booking")
-    public ModelAndView doBooking(@ModelAttribute("booking")Booking booking){
+    public ModelAndView doBooking(@ModelAttribute("booking") Booking booking) {
         booking = bookingForUser;
-        String bookDay = java.time.LocalDate.now()+"";
-        int verityCode = (int) (Math.floor(Math.random()*10000)+ 10000);
+        String bookDay = java.time.LocalDate.now() + "";
+        int verityCode = (int) (Math.floor(Math.random() * 10000) + 10000);
         booking.setBookday(bookDay);
-        booking.setVerifield_id(verityCode+"");
+        booking.setVerifield_id(verityCode + "");
         bookingRepository.save(booking);
         Optional<SlotSubPitch> changeStatus = slotSubPitchRepository.findById(booking.getSlotSubPitch().getId_slot_subPitch());
         changeStatus.get().setStatus_slot_subPitch("Đã thuê");
@@ -216,6 +218,26 @@ public class UserController {
         );
         slotSubPitchRepository.save(change);
         ModelAndView modelAndView = new ModelAndView("booking");
+        return modelAndView;
+    }
+
+    //Thông tin người dùng
+    //View lịch đặt sân của người dùng
+    @GetMapping("mybooking")
+    public ModelAndView bookingUser() {
+        List<Booking> bookingList = bookingRepository.findAll();
+        List<Booking> bookingUsser = new ArrayList<>();
+        ModelAndView modelAndView = new ModelAndView("bookingdetail");
+        for (Booking booking : bookingList) {
+            if ((booking.getUser().getid_user() + "").equalsIgnoreCase(userID + "") && booking.getStatus_booking().equalsIgnoreCase("Đã xác nhận")) {
+                bookingUsser.add(booking);
+            }
+        }
+        if (bookingUsser.size() > 0) {
+            modelAndView.addObject("bookinguser", bookingUsser);
+        } else {
+            modelAndView.addObject("message", "hiện bạn không có lịch nào");
+        }
         return modelAndView;
     }
 }
