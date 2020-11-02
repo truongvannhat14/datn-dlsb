@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aa774cc2-1ec2-4685-a3a3-d30a4e9a1146" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/ManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/manager/bookingmanager.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/manager/bookingmanager.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jAXcYYENKobzDzE5ZOxOUkmu8X" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DATN_DLSB" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\akais\IdeaProjects\datn-dlsb\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="datn-dlsb" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa774cc2-1ec2-4685-a3a3-d30a4e9a1146" name="Default Changelist" comment="" />
+      <created>1603247949746</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603247949746</updated>
+      <workItem from="1603247953385" duration="7098000" />
+      <workItem from="1603332582200" duration="7764000" />
+      <workItem from="1603418629806" duration="7368000" />
+      <workItem from="1603522633730" duration="957000" />
+      <workItem from="1603763769181" duration="10067000" />
+      <workItem from="1603850350159" duration="10780000" />
+      <workItem from="1603936696823" duration="9240000" />
+      <workItem from="1604023128614" duration="9619000" />
+      <workItem from="1604126978338" duration="669000" />
+      <workItem from="1604282418283" duration="811000" />
+    </task>
+    <task id="LOCAL-00001" summary="chạy thử lại">
+      <created>1603860445382</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603860445382</updated>
+    </task>
+    <task id="LOCAL-00002" summary="tối ưu hóa khi view slot tránh clone dl">
+      <created>1603937330854</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603937330854</updated>
+    </task>
+    <task id="LOCAL-00003" summary="done luồng xử lý đặt lịch">
+      <created>1603940221758</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603940221759</updated>
+    </task>
+    <task id="LOCAL-00004" summary="done luồng xử lý đặt lịch">
+      <created>1603945247484</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603945247501</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chạy thử vài chức năng con">
+      <created>1604127142045</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604127142045</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chạy thử lại" />
+    <MESSAGE value="tối ưu hóa khi view slot tránh clone dl" />
+    <MESSAGE value="done luồng xử lý đặt lịch" />
+    <MESSAGE value="chạy thử vài chức năng con" />
+    <option name="LAST_COMMIT_MESSAGE" value="chạy thử vài chức năng con" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="536" y="117" key="#com.intellij.ide.util.MemberChooser" timestamp="1603939139726">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state x="536" y="117" key="#com.intellij.ide.util.MemberChooser/0.0.1459.864@0.0.1459.864" timestamp="1603939139726" />
+    <state x="355" y="28" key="CommitChangelistDialog2" timestamp="1604127139252">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state x="355" y="28" key="CommitChangelistDialog2/0.0.1459.864@0.0.1459.864" timestamp="1604127139252" />
+    <state x="511" y="188" key="FileChooserDialogImpl" timestamp="1604032239731">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state x="511" y="188" key="FileChooserDialogImpl/0.0.1459.864@0.0.1459.864" timestamp="1604032239731" />
+    <state width="1417" height="246" key="GridCell.Tab.0.bottom" timestamp="1604282870485">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="246" key="GridCell.Tab.0.bottom/0.0.1459.864@0.0.1459.864" timestamp="1604282870485" />
+    <state width="1417" height="246" key="GridCell.Tab.0.center" timestamp="1604282870485">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="246" key="GridCell.Tab.0.center/0.0.1459.864@0.0.1459.864" timestamp="1604282870485" />
+    <state width="1417" height="246" key="GridCell.Tab.0.left" timestamp="1604282870485">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="246" key="GridCell.Tab.0.left/0.0.1459.864@0.0.1459.864" timestamp="1604282870485" />
+    <state width="1417" height="246" key="GridCell.Tab.0.right" timestamp="1604282870485">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="246" key="GridCell.Tab.0.right/0.0.1459.864@0.0.1459.864" timestamp="1604282870485" />
+    <state width="1417" height="246" key="GridCell.Tab.1.bottom" timestamp="1604282870486">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="246" key="GridCell.Tab.1.bottom/0.0.1459.864@0.0.1459.864" timestamp="1604282870486" />
+    <state width="1417" height="246" key="GridCell.Tab.1.center" timestamp="1604282870486">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="246" key="GridCell.Tab.1.center/0.0.1459.864@0.0.1459.864" timestamp="1604282870486" />
+    <state width="1417" height="246" key="GridCell.Tab.1.left" timestamp="1604282870486">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="246" key="GridCell.Tab.1.left/0.0.1459.864@0.0.1459.864" timestamp="1604282870486" />
+    <state width="1417" height="246" key="GridCell.Tab.1.right" timestamp="1604282870486">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="246" key="GridCell.Tab.1.right/0.0.1459.864@0.0.1459.864" timestamp="1604282870486" />
+    <state width="1417" height="277" key="GridCell.Tab.2.bottom" timestamp="1603342702570">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="277" key="GridCell.Tab.2.bottom/0.0.1459.864@0.0.1459.864" timestamp="1603342702570" />
+    <state width="1417" height="277" key="GridCell.Tab.2.center" timestamp="1603342702570">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="277" key="GridCell.Tab.2.center/0.0.1459.864@0.0.1459.864" timestamp="1603342702570" />
+    <state width="1417" height="277" key="GridCell.Tab.2.left" timestamp="1603342702570">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="277" key="GridCell.Tab.2.left/0.0.1459.864@0.0.1459.864" timestamp="1603342702570" />
+    <state width="1417" height="277" key="GridCell.Tab.2.right" timestamp="1603342702570">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state width="1417" height="277" key="GridCell.Tab.2.right/0.0.1459.864@0.0.1459.864" timestamp="1603342702570" />
+    <state x="239" y="76" key="SettingsEditor" timestamp="1603941699603">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state x="239" y="76" key="SettingsEditor/0.0.1459.864@0.0.1459.864" timestamp="1603941699603" />
+    <state x="323" y="166" key="Vcs.Push.Dialog.v2" timestamp="1604127157096">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state x="323" y="166" key="Vcs.Push.Dialog.v2/0.0.1459.864@0.0.1459.864" timestamp="1604127157096" />
+    <state x="427" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1604282472578">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state x="427" y="258" key="com.intellij.ide.util.TipDialog/0.0.1459.864@0.0.1459.864" timestamp="1604282472578" />
+    <state x="361" y="129" width="738" height="606" key="find.popup" timestamp="1603765181412">
+      <screen x="0" y="0" width="1459" height="864" />
+    </state>
+    <state x="361" y="129" width="738" height="606" key="find.popup/0.0.1459.864@0.0.1459.864" timestamp="1603765181412" />
+  </component>
+</project>

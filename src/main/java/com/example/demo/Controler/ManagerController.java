@@ -51,8 +51,8 @@ public class ManagerController {
                 managerID = person.getId_manager();
                 modelAndView = new ModelAndView("manager/bookingmanager");
             }
-            for(int i = 0; i < bookingList.size(); i++){
-                if((bookingList.get(i).getSlotSubPitch().getSubPitch().getPitch().getManager().getId_manager()+"").equalsIgnoreCase(managerID+"")){
+            for (int i = 0; i < bookingList.size(); i++) {
+                if ((bookingList.get(i).getSlotSubPitch().getSubPitch().getPitch().getManager().getId_manager() + "").equalsIgnoreCase(managerID + "")) {
                     bookingForManager.add(bookingList.get(i));
                 }
             }
@@ -61,10 +61,16 @@ public class ManagerController {
         modelAndView.addObject("message", "Sai email hoặc mât khẩu!");
         return modelAndView;
     }
+
     //Chuyển form để bắt đầu confirm lịch đặt
     @GetMapping("confirm/{id_booking}")
-    public ModelAndView confirmBooking(@PathVariable Long id_booking ){
+    public ModelAndView confirmBooking(@PathVariable Long id_booking) {
         Optional<Booking> confirm = bookingRepository.findById(id_booking);
+        if (managerID == null) {
+            ModelAndView modelAndView = new ModelAndView("manager/loginformanager");
+            modelAndView.addObject("manager", new Manager());
+            return modelAndView;
+        }
         bookingToConfirm.setId_booking(confirm.get().getId_booking());
         bookingToConfirm.setUser(confirm.get().getUser());
         bookingToConfirm.setManager(confirm.get().getManager());
@@ -78,15 +84,16 @@ public class ManagerController {
         modelAndView.addObject("booking", confirm);
         return modelAndView;
     }
+
     //Action Confirm
     @PostMapping("confirmbooking")
-    public ModelAndView doConfirm(@ModelAttribute("booking") Booking booking){
+    public ModelAndView doConfirm(@ModelAttribute("booking") Booking booking) {
         booking = bookingToConfirm;
         Optional<Manager> manager = managerRepository.findById(managerID);
         booking.setManager(manager.get());
         booking.setStatus_booking("Đã xác nhận");
         bookingRepository.save(booking);
         ModelAndView modelAndView = new ModelAndView("manager/detailbooking");
-        return  modelAndView;
+        return modelAndView;
     }
 }
