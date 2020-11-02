@@ -96,4 +96,5 @@ public class ManagerController {
         ModelAndView modelAndView = new ModelAndView("manager/detailbooking");
         return modelAndView;
     }
+
 }
