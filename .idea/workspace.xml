@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa774cc2-1ec2-4685-a3a3-d30a4e9a1146" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/chitietnguoidung.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/chitietquanly.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/quanlysanphu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Model/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/notfound.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/404notfound.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/404notfound.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/sanbong.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/quanlysan.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +103,7 @@
       <workItem from="1604292621746" duration="501000" />
       <workItem from="1604368660360" duration="3175000" />
       <workItem from="1604372621060" duration="4072000" />
+      <workItem from="1604455858926" duration="1134000" />
     </task>
     <task id="LOCAL-00001" summary="chạy thử lại">
       <created>1603860445382</created>
@@ -166,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604291107631</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="dùng 404 thì lỗi full css, đang khắc phục">
+      <created>1604455918505</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604455918505</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,10 +196,10 @@
       <screen x="0" y="0" width="1459" height="864" />
     </state>
     <state x="461" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1459.864@0.0.1459.864" timestamp="1604284976434" />
-    <state x="355" y="28" key="CommitChangelistDialog2" timestamp="1604291105893">
+    <state x="355" y="28" key="CommitChangelistDialog2" timestamp="1604455912204">
       <screen x="0" y="0" width="1459" height="864" />
     </state>
-    <state x="355" y="28" key="CommitChangelistDialog2/0.0.1459.864@0.0.1459.864" timestamp="1604291105893" />
+    <state x="355" y="28" key="CommitChangelistDialog2/0.0.1459.864@0.0.1459.864" timestamp="1604455912204" />
     <state x="511" y="188" key="FileChooserDialogImpl" timestamp="1604032239731">
       <screen x="0" y="0" width="1459" height="864" />
     </state>
@@ -254,10 +256,10 @@
       <screen x="0" y="0" width="1459" height="864" />
     </state>
     <state x="239" y="76" key="SettingsEditor/0.0.1459.864@0.0.1459.864" timestamp="1603941699603" />
-    <state x="323" y="166" key="Vcs.Push.Dialog.v2" timestamp="1604283360003">
+    <state x="323" y="166" key="Vcs.Push.Dialog.v2" timestamp="1604455928089">
       <screen x="0" y="0" width="1459" height="864" />
     </state>
-    <state x="323" y="166" key="Vcs.Push.Dialog.v2/0.0.1459.864@0.0.1459.864" timestamp="1604283360003" />
+    <state x="323" y="166" key="Vcs.Push.Dialog.v2/0.0.1459.864@0.0.1459.864" timestamp="1604455928089" />
     <state x="427" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1604455863451">
       <screen x="0" y="0" width="1459" height="864" />
     </state>

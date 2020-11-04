@@ -29,6 +29,8 @@ public class AdminController {
     IManagerRepository managerRepository;
     @Autowired
     IRoleRepository roleRepository;
+    @Autowired
+    IPitchRepository pitchRepository;
 
     @GetMapping("/admin")//mấy cái này chắc ko cần nói
     public ModelAndView loginformanger(Model model) {
@@ -148,7 +150,34 @@ public class AdminController {
         return modelAndView;
     }
 
-    //
+    //sửa thông tin nhân viên
+    @PostMapping("deactive")
+    public ModelAndView deleteManager(@ModelAttribute("manager")Manager managerDelete){
+        managerDelete = manager;
+        manager.setStatus_manager("Deactive");
+        managerRepository.save(managerDelete);
+        ModelAndView modelAndView = new ModelAndView("admin/quanlynhanvien");
+        return modelAndView;
+    }
+
+    //quản lý sân
+    //hiển thị sân lớn
+    @GetMapping("allpitch")
+    public ModelAndView showPitch(){
+        List<Pitch> pitchList = pitchRepository.findAll();
+        ModelAndView modelAndView = new ModelAndView("admin/quanlysan");
+        modelAndView.addObject("allpitch", pitchList);
+        return modelAndView;
+    }
+
+    //hiển thị chi tiết
+    @GetMapping("san/{id_pitch}")
+    public ModelAndView detailPitch(@PathVariable long id_pitch){
+        Optional<Pitch> detail = pitchRepository.findById(id_pitch);
+        ModelAndView modelAndView = new ModelAndView("admin/chitietsan");
+        modelAndView.addObject("pitch", detail);
+        return modelAndView;
+    }
 
 }
 
