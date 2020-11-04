@@ -12,8 +12,9 @@ public class Manager {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_manager")
     private Long id_manager;
-    @Column(name = "id_role")
-    private int id_role;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_role")
+    private Role role;
     @Column(name = "email_manager")
     private String email_manager;
     @Column(name = "pass_manager")
@@ -33,8 +34,8 @@ public class Manager {
 
     }
 
-    public Manager(int id_role, String email_manager, String pass_manager, String name_manager, String phone_manager, String address_manager, String status_manager) {
-        this.id_role = id_role;
+    public Manager(Role role, String email_manager, String pass_manager, String name_manager, String phone_manager, String address_manager, String status_manager) {
+        this.role = role;
         this.email_manager = email_manager;
         this.pass_manager = pass_manager;
         this.name_manager = name_manager;
@@ -51,12 +52,12 @@ public class Manager {
         this.id_manager = id_manager;
     }
 
-    public int getId_role() {
-        return id_role;
+    public Role getRole() {
+        return role;
     }
 
-    public void setId_role(int id_role) {
-        this.id_role = id_role;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public String getEmail_manager() {

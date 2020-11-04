@@ -46,7 +46,7 @@ public class UserController {
         List<User> list = userRepository.findAll();
         List<SubPitch> subPitch = subPitchRepository.findAll();
         for (User person : list) {
-            if (email_user.equalsIgnoreCase(person.getEmail_user()) && pass_user.equalsIgnoreCase(person.getPass_user())) {
+            if (email_user.equalsIgnoreCase(person.getEmail_user()) && pass_user.equalsIgnoreCase(person.getPass_user()) && person.getStatus_user().equalsIgnoreCase("")) {
                 userID = person.getid_user();
                 modelAndView = new ModelAndView("index");
             }
