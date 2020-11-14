@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa774cc2-1ec2-4685-a3a3-d30a4e9a1146" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/quanlysanphu.html" afterDir="false" />
+    <list default="true" id="aa774cc2-1ec2-4685-a3a3-d30a4e9a1146" name="Default Changelist" comment="khac phuc xong loi css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/sanbong.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/quanlysan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/NotFoundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controler/NotFoundController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +21,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="NgocLong18 &lt;51955577+ngoclong18@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -104,6 +108,7 @@
       <workItem from="1604368660360" duration="3175000" />
       <workItem from="1604372621060" duration="4072000" />
       <workItem from="1604455858926" duration="1134000" />
+      <workItem from="1605323267091" duration="275000" />
     </task>
     <task id="LOCAL-00001" summary="chạy thử lại">
       <created>1603860445382</created>
@@ -196,10 +201,11 @@
       <screen x="0" y="0" width="1459" height="864" />
     </state>
     <state x="461" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1459.864@0.0.1459.864" timestamp="1604284976434" />
-    <state x="355" y="28" key="CommitChangelistDialog2" timestamp="1604455912204">
-      <screen x="0" y="0" width="1459" height="864" />
+    <state x="374" y="16" key="CommitChangelistDialog2" timestamp="1605323535788">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="355" y="28" key="CommitChangelistDialog2/0.0.1459.864@0.0.1459.864" timestamp="1604455912204" />
+    <state x="374" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1605323535788" />
     <state x="511" y="188" key="FileChooserDialogImpl" timestamp="1604032239731">
       <screen x="0" y="0" width="1459" height="864" />
     </state>
